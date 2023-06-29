@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  font-family: 'Noto Sans TC', sans-serif;
+  scroll-behavior: smooth;
+}
+#app {
+  background-image: url('./assets/image/bg.png');
+  @apply bg-slate-100 min-h-screen;
+}
+.stepNumber {
+  font-family: 'Source Code Pro', monospace;
+  @apply  text-2xl text-primary-700;
+}
+
+.radio-box {
+  @apply border-l border-t border-stone-400 shadow ;
+}
+
+.grid-table{
+    @apply bg-white;
+    > div {
+        @apply px-4 py-2 border-r border-b border-stone-400;
+        &.th {
+          @apply px-0 sm:px-4 py-2 bg-primary-200 text-sm text-primary-800 font-bold;
+        }
+        &.mid {
+          @apply flex items-center justify-center;
+        }
+        &.radioBlock {
+          @apply  px-0 sm:px-4 py-2 flex items-center justify-center bg-stone-50;
+          .radio {
+            @apply border-stone-300 border-2;
+          }
+        }
+        &.question {
+          @apply text-primary-700 text-xl;
+        }
+    }
+}
+.text-vertical {
+    writing-mode: vertical-lr;
+}
+
+.step-title {
+  @apply text-center font-medium text-3xl mb-8 text-primary-900;
+}
+
+.table-item {
+    @apply flex flex-col sm:table-row mb-3 rounded-xl overflow-hidden   ;
+      td.value {
+          @apply flex sm:table-cell flex-col py-2 sm:py-4 border-b;
+          >span {
+          @apply sm:hidden text-sm text-stone-400;
+      }
+    }
+    &:hover {
+      td {
+        @apply  bg-secondary-100;
+      }
+    }
+}
+
+.table {
+    thead {
+        th {
+            @apply bg-primary-200 border-b border-stone-400 text-primary-800 text-sm ;
+        }
+    }
+    tbody {
+        tr {
+          &:last-child {
+            td {
+              @apply border-none;
+            }
+          }
+            @apply border-none ;
+            td {
+              @apply border-b border-stone-400;
+            }
+            
+        }
+    }
+}
+
+.pagination {
+  @apply btn-group w-full justify-center items-center;
+  button {
+    @apply btn btn-outline rounded-none border-l-0 first:border-l first:rounded-l-lg last:rounded-r-lg;
+    &.btn-active {
+      @apply border-neutral
+    }
+  }
+}
+
+input.input-bordered, select.input-bordered, .textarea-bordered {
+  @apply border-stone-400
+}
+
+.filter {
+  @apply mb-6 flex flex-col sm:flex-row items-end sm:space-x-2 ;
+  .form-control {
+    @apply w-full sm:w-auto
+  }
+}
+
+.redtxt {
+    text-decoration: underline;
+    color: #D9001B;
+}
